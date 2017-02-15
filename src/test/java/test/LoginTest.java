@@ -5,9 +5,11 @@ import io.appium.java_client.android.AndroidDriver;
 import method.ClearMethod;
 import method.ClickMethod;
 import method.SendkeysMethod;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import page.AboutUS;
 import page.Login;
 import page.LoginAndRegister;
 import page.MainPage;
@@ -25,6 +27,7 @@ public class LoginTest {
     MainPage mainpage;
     LoginAndRegister lr;
     Login login;
+    AboutUS aboutUS;
     @BeforeMethod
     public  void setUp() throws  Exception {
         initialize = new InitializeDriver("192.168.56.102:5555","7");
@@ -37,15 +40,22 @@ public class LoginTest {
     public void loginTest(String username, String pwd) throws Exception {
         Thread.sleep(3000);
         mainpage = new MainPage(driver);
+        mainpage.mainPage();
         mainpage.aboutButton.click();
         lr = new LoginAndRegister(driver);
+        lr.loginAndRegpage();
         lr.loginButton.click();
         login = new Login(driver);
+        login.loginPage();
         login.username.clear();
         login.username.sendKeys(username);
         login.pwd.clear();
         login.pwd.sendKeys(pwd);
+        Thread.sleep(2000);
         login.loginButton.click();
+        aboutUS = new AboutUS(driver);
+        aboutUS.aboutUSPage();
+        Assert.assertEquals(aboutUS.username,"林夕飞飞");
     }
 
     @AfterMethod

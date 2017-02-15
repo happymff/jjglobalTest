@@ -21,8 +21,9 @@ public class Login {
         username = driver.findElement(By.id("com.moft:id/username_text"));
         //密码
         pwd = driver.findElement(By.id("com.moft:id/password_text"));
-        //密码
-        loginButton = driver.findElement(By.className("android.widget.LinearLayout"));
+        //登录按钮
+        loginButton = driver.findElementById("com.moft:id/main_scrollview").findElement(By.className("android.widget.LinearLayout"));
+        //忘记密码
         forgetPwd = driver.findElement(By.id("com.moft:id/forger_password"));
     }
 

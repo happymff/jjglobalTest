@@ -31,7 +31,7 @@ public class MainPage {
         //消息中心
         messageButton = driver.findElement(By.id("com.moft:id/message_center"));
         //Banner
-        banner = driver.findElement(By.id("android.widget.ImageView"));
+        //banner = (WebElement) driver.findElements(By.id("android.widget.ImageView")).get(2);
         //Banner下分类共6个
         sortUnderBanner = driver.findElements(By.className("android.widget.RelativeLayout"));
         //主页分类共8个
