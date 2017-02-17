@@ -2,16 +2,13 @@ package test;
 
 import data.DataProvid;
 import io.appium.java_client.android.AndroidDriver;
-import method.ClearMethod;
-import method.ClickMethod;
-import method.SendkeysMethod;
+import method.Login;
+import method.LoginAndRegister;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import page.AboutUS;
-import page.Login;
-import page.LoginAndRegister;
+import page.AboutUSPage;
 import page.MainPage;
 import util.InitializeDriver;
 
@@ -27,10 +24,10 @@ public class LoginTest {
     MainPage mainpage;
     LoginAndRegister lr;
     Login login;
-    AboutUS aboutUS;
+    AboutUSPage aboutUS;
     @BeforeMethod
     public  void setUp() throws  Exception {
-        initialize = new InitializeDriver("192.168.56.102:5555","7");
+        initialize = new InitializeDriver("192.168.56.102:5555","5.1");
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), initialize.driverInitialize());
         // initializing explicit wait object
         driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
@@ -42,20 +39,14 @@ public class LoginTest {
         mainpage = new MainPage(driver);
         mainpage.mainPage();
         mainpage.aboutButton.click();
-        lr = new LoginAndRegister(driver);
-        lr.loginAndRegpage();
-        lr.loginButton.click();
-        login = new Login(driver);
-        login.loginPage();
-        login.username.clear();
-        login.username.sendKeys(username);
-        login.pwd.clear();
-        login.pwd.sendKeys(pwd);
+        lr = new LoginAndRegister();
+        lr.login(driver);
+        login = new Login();
+        login.login(username,pwd,driver);
         Thread.sleep(2000);
-        login.loginButton.click();
-        aboutUS = new AboutUS(driver);
+        aboutUS = new AboutUSPage(driver);
         aboutUS.aboutUSPage();
-        Assert.assertEquals(aboutUS.username,"林夕飞飞");
+        Assert.assertEquals(aboutUS.username,"你好");
     }
 
     @AfterMethod

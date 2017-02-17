@@ -5,15 +5,13 @@ import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import java.util.List;
-
 /**
  * Created by mengfeifei on 2017/1/6.
  */
-public class LoginAndRegister {
+public class LoginAndRegisterPage {
     AndroidDriver driver ;
     public WebElement backButton,loginButton,regButton;
-    public LoginAndRegister(AndroidDriver driver){
+    public LoginAndRegisterPage(AndroidDriver driver){
         this.driver = driver;
     }
     public void loginAndRegpage(){

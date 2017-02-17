@@ -3,7 +3,10 @@ package page;
 
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 /**
  * Created by mengfeifei on 2017/1/6.
@@ -22,7 +25,8 @@ public class LoginPage {
         //密码
         pwd = driver.findElement(By.id("com.moft:id/password_text"));
         //登录按钮
-        loginButton = driver.findElementById("com.moft:id/main_scrollview").findElement(By.className("android.widget.LinearLayout"));
+        List<WebElement> w1 = driver.findElements(By.className("android.widget.LinearLayout"));
+        loginButton = w1.get(w1.size()-1);
         //忘记密码
         forgetPwd = driver.findElement(By.id("com.moft:id/forger_password"));
     }
