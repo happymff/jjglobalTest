@@ -8,10 +8,10 @@ import org.openqa.selenium.WebElement;
 /**
  * Created by mengfeifei on 2017/1/6.
  */
-public class Login {
+public class LoginPage {
     AndroidDriver driver ;
     public WebElement backButton,username,pwd,loginButton,forgetPwd;
-    public Login(AndroidDriver driver){
+    public LoginPage(AndroidDriver driver){
         this.driver = driver;
     }
     public void loginPage(){
@@ -26,6 +26,4 @@ public class Login {
         //忘记密码
         forgetPwd = driver.findElement(By.id("com.moft:id/forger_password"));
     }
-
-
 }
