@@ -27,7 +27,7 @@ public class LoginTest {
     AboutUSPage aboutUS;
     @BeforeMethod
     public  void setUp() throws  Exception {
-        initialize = new InitializeDriver("192.168.56.102:5555","5.1");
+        initialize = new InitializeDriver("192.168.56.101:5555","5.1");
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), initialize.driverInitialize());
         // initializing explicit wait object
         driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
@@ -46,7 +46,7 @@ public class LoginTest {
         Thread.sleep(2000);
         aboutUS = new AboutUSPage(driver);
         aboutUS.aboutUSPage();
-        Assert.assertEquals(aboutUS.username,"你好");
+        Assert.assertEquals(aboutUS.username.getText(),"你好");
     }
 
     @AfterMethod
