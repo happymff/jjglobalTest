@@ -13,6 +13,7 @@ public class InitializeDriver {
     String appPackageName = "com.moft";
     String devicename;
     String platormVersion;
+    boolean install = false;
 
     public InitializeDriver(String devicename, String platormVersion){
         this.devicename = devicename;
@@ -27,6 +28,7 @@ public class InitializeDriver {
         File app = new File(appDir, apkname);
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("autoAcceptAlerts", true);
         //设置每次运行不重新启动被测试app
         capabilities.setCapability("noReset","true");
         capabilities.setCapability("fullReset","false");
@@ -35,14 +37,15 @@ public class InitializeDriver {
         capabilities.setCapability("platformName", platformName);
         capabilities.setCapability("deviceName", devicename);
         capabilities.setCapability("platformVersion", platormVersion);
+        capabilities.setCapability("clearSystemFiles","True");
         //support Chinese
         capabilities.setCapability("unicodeKeyboard", "True");
         capabilities.setCapability("resetKeyboard", "True");
 
-       // if (install == true) {
+        //if (install == true) {
             capabilities.setCapability("app", app.getAbsolutePath());
             capabilities.setCapability("appPackage", appPackageName);
-      //  }
+        //}
         return capabilities;
     }
 }

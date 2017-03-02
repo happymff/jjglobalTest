@@ -9,17 +9,10 @@
                 <parameter name="pwd" value="a11111"/>
             </parameters>
            -->
-            <class name="AiXuepai.LoginTest"/>
-            <class name="AiXuepai.SelectClassTest"/>
-            <class name="AiXuepai.BaiBanAdd_ManageTest"/>
-            <class name="AiXuepai.BaiBanRecordingCicleTest"/>
-            <class name="AiXuepai.BaiBanRecordingEllipseTest"/>
-            <class name="AiXuepai.BaiBanRecordingHexagonTest"/>
-            <class name="AiXuepai.BaiBanRecordingHexagonUploadTest"/>
-            <class name="AiXuepai.BaiBanRecordingLineTest"/>
-            <class name="AiXuepai.BaiBanRecordingRectangleTest"/>
-            <class name="AiXuepai.BaiBanRecordingTest"/>
-            <class name="AiXuepai.BaiBanRecordingTriangleTest"/>
+            <class name="test.GoThroughHotSortTest"/>
+            <class name="test.GoThroughGirlClothSortTest"/>
+            <class name="test.GoThroughPresentSortTest"/>
+            <class name="test.GoThroughPeishiSortTest"/>
         </classes>
     </test>
 </suite>
