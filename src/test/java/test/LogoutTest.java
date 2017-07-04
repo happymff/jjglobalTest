@@ -46,19 +46,19 @@ public class LogoutTest {
         mainpage = new MainPage(driver);
         mainpage.mainPage();
         mainpage.aboutButton.click();
-        lr = new LoginAndRegister();
-        lr.login(driver);
-        login = new Login();
-        login.login(username,pwd,driver);
         Thread.sleep(2000);
         aboutUS = new AboutUSPage(driver);
         aboutUS.aboutUSPage();
         Logout logout = new Logout();
         logout.logout(driver);
-        LoginAndRegisterPage lr = new LoginAndRegisterPage(driver);
-        lr.loginAndRegpage();
+        LoginAndRegisterPage lr1 = new LoginAndRegisterPage(driver);
+        lr1.loginAndRegpage();
         Thread.sleep(3000);
-        Assert.assertEquals(lr.loginButton.findElement(By.className("android.widget.TextView")).getText(),"登录");
+        Assert.assertEquals(lr1.loginButton.findElement(By.className("android.widget.TextView")).getText(),"登录");
+        lr = new LoginAndRegister();
+        lr.login(driver);
+        login = new Login();
+        login.login(username,pwd,driver);
     }
 
     @AfterMethod
