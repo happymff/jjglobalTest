@@ -35,7 +35,8 @@ public class SeleniumTest {
         driver.get("https://www.jiguang.cn/push");
         driver.findElement(By.linkText("立即使用")).click();
         Thread.sleep(5000);
-        driver.findElement(By.xpath("/html/body/div[3]/div/div/div[3]/button[2]")).click();
+        //driver.findElement(By.xpath("/html/body/div[3]/div/div/div[3]/button[2]")).click();
+        driver.findElement(By.xpath("//*[@id=\"div-infoHintModal\"]/div/div[2]/div[2]/button[1]")).click();
         Thread.sleep(5000);
         driver.findElement(By.xpath("/html/body/div/div/div[1]/input")).clear();
         driver.findElement(By.xpath("/html/body/div/div/div[1]/input")).sendKeys("jjglobal@jjglobal.com");
@@ -47,6 +48,8 @@ public class SeleniumTest {
         driver.findElement(By.linkText("推送")).click();
         Thread.sleep(2000);
         driver.findElement(By.xpath("//*[@id=\"base-main\"]/div[2]/div/div/div[3]/div[2]/div[2]/div[1]/ul/li[8]/a/i")).click();
+        //Thread.sleep(2000);
+        //driver.findElement(By.xpath("//*[@id=\"base-main\"]/div[2]/div/div/div/div[4]/div[2]/div[2]/div[1]/div[2]/ul/li[3]/i")).click();
        // Thread.sleep(2000);
        // driver.findElement(By.xpath("//*[@id=\"base-main\"]/div[2]/div/div/div/div[4]/div[2]/div[2]/div[1]/div[2]/ul/li[2]/i")).click();
        // driver.findElement(By.xpath("//*[@id=\"base-main\"]/div[2]/div/div/div/div[4]/div[4]/div[1]/span[2]")).click();
@@ -56,13 +59,15 @@ public class SeleniumTest {
         Thread.sleep(5000);
         driver.findElement(By.xpath("//*[@id=\"extra-input\"]/ul/li/input[1]")).click();
         driver.findElement(By.xpath("//*[@id=\"extra-input\"]/ul/li/input[1]")).clear();
-       // driver.findElement(By.xpath("//*[@id=\"extra-input\"]/ul/li/input[1]")).sendKeys("store");
+        //driver.findElement(By.xpath("//*[@id=\"extra-input\"]/ul/li/input[1]")).sendKeys("store");
         //driver.findElement(By.xpath("//*[@id=\"extra-input\"]/ul/li/input[1]")).sendKeys("story");
-        driver.findElement(By.xpath("//*[@id=\"extra-input\"]/ul/li/input[1]")).sendKeys("commodity");
+        //driver.findElement(By.xpath("//*[@id=\"extra-input\"]/ul/li/input[1]")).sendKeys("commodity");
+        driver.findElement(By.xpath("//*[@id=\"extra-input\"]/ul/li/input[1]")).sendKeys("home");
         driver.findElement(By.xpath("//*[@id=\"extra-input\"]/ul/li/input[2]")).click();
         driver.findElement(By.xpath("//*[@id=\"extra-input\"]/ul/li/input[2]")).clear();
-       // driver.findElement(By.xpath("//*[@id=\"extra-input\"]/ul/li/input[2]")).sendKeys("60");
-        driver.findElement(By.xpath("//*[@id=\"extra-input\"]/ul/li/input[2]")).sendKeys("1773");
+        //driver.findElement(By.xpath("//*[@id=\"extra-input\"]/ul/li/input[2]")).sendKeys("60");
+        driver.findElement(By.xpath("//*[@id=\"extra-input\"]/ul/li/input[2]")).sendKeys("0");
+        //driver.findElement(By.xpath("//*[@id=\"extra-input\"]/ul/li/input[2]")).sendKeys("1773");
         for(int i = 0; i < 50;i ++){
             driver.findElement(By.xpath("//*[@id=\"base-main\"]/div[2]/div/div/div/div[4]/div[5]/div[1]")).click();
             Thread.sleep(2000);
@@ -74,6 +79,6 @@ public class SeleniumTest {
     }
 
     @AfterMethod
-    public void tearDown(){//driver.quit();
+    public void tearDown(){driver.quit();
     }
 }

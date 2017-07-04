@@ -32,7 +32,7 @@ public class GoThroughPresentSortTest {
     }
 
     @Test
-    public void loginTest() throws Exception {
+    public void goThroughPresentTest() throws Exception {
         goThroughPageInMain = new GoThroughPageInMain();
         goThroughPageInMain.gointo(2,driver);
         Assert.assertEquals("礼物",driver.findElement(By.id("com.moft:id/category_name")).getText());

@@ -32,7 +32,7 @@ public class GoThroughPeishiSortTest {
     }
 
     @Test
-    public void loginTest() throws Exception {
+    public void goThroughPeishiTest() throws Exception {
         goThroughPageInMain = new GoThroughPageInMain();
         goThroughPageInMain.gointo(3,driver);
         Assert.assertEquals("配饰",driver.findElement(By.id("com.moft:id/category_name")).getText());

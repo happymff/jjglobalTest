@@ -32,7 +32,7 @@ public class GoThroughHotSortTest {
     }
 
     @Test
-    public void loginTest() throws Exception {
+    public void goThroughHotSortTest() throws Exception {
         goThroughPageInMain = new GoThroughPageInMain();
         goThroughPageInMain.gointo(0,driver);
         Assert.assertEquals("HOT",driver.findElement(By.id("com.moft:id/category_name")).getText());
