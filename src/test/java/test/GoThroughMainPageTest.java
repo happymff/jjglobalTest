@@ -1,27 +1,31 @@
 package test;
 
+import com.oracle.tools.packager.Log;
 import io.appium.java_client.android.AndroidDriver;
+import method.GoThroughMainPage;
 import method.GoThroughPageInMain;
 import method.Swip;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import page.MainPage;
 import util.InitializeDriver;
 import util.IsElementPresent;
 
 import java.net.URL;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
  * Created by mengfeifei on 2016/12/29.
  */
-public class GoThroughGirlClothSortTest {
+public class GoThroughMainPageTest {
     AndroidDriver driver;
     InitializeDriver initialize;
-    GoThroughPageInMain goThroughPageInMain;
-    Swip swip;
+    GoThroughMainPage goThroughMainPage;
     IsElementPresent isElementPresent;
     @BeforeMethod
     public  void setUp() throws  Exception {
@@ -32,21 +36,14 @@ public class GoThroughGirlClothSortTest {
     }
 
     @Test
-    public void goThroughGirlClothTest() throws Exception {
-        goThroughPageInMain = new GoThroughPageInMain();
-        goThroughPageInMain.gointo(1,driver);
-        Assert.assertEquals("女装",driver.findElement(By.id("com.moft:id/category_name")).getText());
-        isElementPresent = new IsElementPresent();
-        swip = new Swip();
-        do {
-            swip.swipToDown(driver);
-            Boolean elementpresent = isElementPresent.isElementPresent(By.id("com.moft:id/no_more"),driver);
-            if (elementpresent){
-                break;
-            }
-        }while(true);
+    public void goThroughMainPageTest() throws Exception {
+        Log.info("This is a log message");
+        goThroughMainPage = new GoThroughMainPage();
+        goThroughMainPage.swipMainPage(driver);
         Thread.sleep(2000);
-        Assert.assertEquals("没有更多了",driver.findElement(By.id("com.moft:id/no_more")).getText());
+        String s1 = driver.getPageSource();
+        System.out.println(s1);
+        Assert.assertTrue(s1.contains("皮质与金属的摩擦"));
     }
 
     @AfterMethod

@@ -45,7 +45,7 @@ public class MainPage {
         //关于我们按钮
         aboutButton = driver.findElement(By.id("com.moft:id/buttom_four"));
         //分类下面的list
-        banner_list = driver.findElement(By.id("com.moft:id/banner_list")).findElements(By.className("android.widget.LinearLayout"));
+        banner_list = driver.findElements(By.className("android.widget.LinearLayout"));
     }
 
 

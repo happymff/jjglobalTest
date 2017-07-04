@@ -15,6 +15,7 @@
             <class name="test.GoThroughPresentSortTest"/>
             <class name="test.GoThroughGirlClothSortTest"/>
             <class name="test.GoThroughHotSortTest"/>
+            <class name="test.GoThroughMainPageTest"/>
         </classes>
     </test>
 </suite>
