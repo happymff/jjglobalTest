@@ -12,6 +12,7 @@ public class IsElementPresent {
     public boolean isElementPresent(By by, AndroidDriver driver) {
         try {
             driver.findElement(by);
+            System.out.println("test");
             return true;
         } catch (NoSuchElementException e) {
             return false;
