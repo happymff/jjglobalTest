@@ -9,8 +9,8 @@
                 <parameter name="pwd" value="a11111"/>
             </parameters>
            -->
-            <class name="test.LoginTest"/>
             <class name="test.LogoutTest"/>
+            <class name="test.LoginTest"/>
             <class name="test.GoThroughPeishiSortTest"/>
             <class name="test.GoThroughPresentSortTest"/>
             <class name="test.GoThroughGirlClothSortTest"/>

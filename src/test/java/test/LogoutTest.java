@@ -55,10 +55,10 @@ public class LogoutTest {
         lr1.loginAndRegpage();
         Thread.sleep(3000);
         Assert.assertEquals(lr1.loginButton.findElement(By.className("android.widget.TextView")).getText(),"登录");
-        lr = new LoginAndRegister();
-        lr.login(driver);
-        login = new Login();
-        login.login(username,pwd,driver);
+//        lr = new LoginAndRegister();
+//        lr.login(driver);
+//        login = new Login();
+//        login.login(username,pwd,driver);
     }
 
     @AfterMethod

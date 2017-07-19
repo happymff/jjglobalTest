@@ -32,9 +32,9 @@ public class LoginTest {
     InitSetup initSetup;
     @BeforeMethod
     public  void setUp() throws  Exception {
-        startAppiumServer = new StartAppiumServer();
-        startAppiumServer.startAppium();
-        Thread.sleep(5000);
+//        startAppiumServer = new StartAppiumServer();
+//        startAppiumServer.startAppium();
+//        Thread.sleep(5000);
         initialize = new InitializeDriver("192.168.56.101:5555","5.1");
         initSetup = new InitSetup();
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), initialize.driverInitialize());

@@ -24,7 +24,7 @@ public class InitializeDriver {
         // set up appium
 
         File classpathRoot = new File(System.getProperty("user.dir"));
-        File appDir = new File(classpathRoot, "src/test/resource/apps/");
+        File appDir = new File(classpathRoot, "src/test/resource/");
         File app = new File(appDir, apkname);
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
