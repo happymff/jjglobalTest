@@ -1,14 +1,15 @@
 package test;
 
 import io.appium.java_client.android.AndroidDriver;
-import method.EnterIntoSomeGoodPage;
 import method.GoThroughPageInMain;
+import method.SearchGood;
 import method.Swip;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import page.MainPage;
 import util.InitializeDriver;
 import util.IsElementPresent;
 
@@ -18,10 +19,11 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by mengfeifei on 2016/12/29.
  */
-public class EnterEndGoodPage {
+public class GoSearchPageTest {
     AndroidDriver driver;
     InitializeDriver initialize;
-    EnterIntoSomeGoodPage enter;
+    MainPage mainPage;
+    SearchGood searchGood;
     @BeforeMethod
     public  void setUp() throws  Exception {
         initialize = new InitializeDriver("192.168.56.101:5555","5.1");
@@ -31,10 +33,20 @@ public class EnterEndGoodPage {
     }
 
     @Test
-    public void goGoodPage() throws Exception {
-       enter = new EnterIntoSomeGoodPage();
-       enter.enter(driver);
-       Assert.assertEquals("加入购物车",driver.findElement(By.id("com.moft:id/join_shoppingcart_btn")).getText());
+    public void goThroughGirlClothTest() throws Exception {
+        Thread.sleep(3000);
+        mainPage = new MainPage(driver);
+        mainPage.mainPage();
+        mainPage.searchButton.click();
+        searchGood = new SearchGood();
+        searchGood.searchGood(driver);
+        Thread.sleep(2000);
+        searchGood.searchNearby(driver);
+        driver.findElement(By.className("android.widget.ImageView")).click();
+        Thread.sleep(2000);
+        searchGood.cancelDeleteSearchHistory(driver);
+        Thread.sleep(2000);
+        searchGood.deleteSearchHistory(driver);
     }
 
     @AfterMethod

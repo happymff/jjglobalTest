@@ -6,45 +6,58 @@
       <class name="test.GoThroughPeishiSortTest">
         <methods>
           <include name="setUp"/>
-          <include name="goThroughPeishiTest"/>
+          <include name="tearDown"/>
         </methods>
       </class> <!-- test.GoThroughPeishiSortTest -->
-      <class name="test.LogoutTest">
+      <class name="test.GoInService">
         <methods>
           <include name="setUp"/>
-          <include name="logoutTest"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- test.GoInService -->
+      <class name="test.LogoutTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
         </methods>
       </class> <!-- test.LogoutTest -->
       <class name="test.GoThroughMainPageTest">
         <methods>
           <include name="setUp"/>
-          <include name="goThroughMainPageTest"/>
+          <include name="tearDown"/>
         </methods>
       </class> <!-- test.GoThroughMainPageTest -->
       <class name="test.GoThroughHotSortTest">
         <methods>
           <include name="setUp"/>
-          <include name="goThroughHotSortTest"/>
+          <include name="tearDown"/>
         </methods>
       </class> <!-- test.GoThroughHotSortTest -->
+      <class name="test.EnterEndGoodPage">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- test.EnterEndGoodPage -->
       <class name="test.GoThroughPresentSortTest">
         <methods>
-          <include name="goThroughPresentTest"/>
+          <include name="tearDown"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- test.GoThroughPresentSortTest -->
+      <class name="test.LoginTest">
+        <methods>
+          <include name="loginTest" invocation-numbers="0"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- test.LoginTest -->
       <class name="test.GoThroughGirlClothSortTest">
         <methods>
-          <include name="goThroughGirlClothTest"/>
+          <include name="tearDown"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- test.GoThroughGirlClothSortTest -->
-      <class name="test.LoginTest">
-        <methods>
-          <include name="loginTest"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- test.LoginTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

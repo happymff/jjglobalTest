@@ -29,7 +29,7 @@ public class GoInService {
     }
 
     @Test
-    public void goThroughGirlClothTest() throws Exception {
+    public void goService() throws Exception {
        enter = new GoInHuanXinService();
        enter.enter(driver);
        Assert.assertEquals("讲究君",driver.findElement(By.id("com.moft:id/title")).getText());
