@@ -16,6 +16,8 @@
             <class name="test.GoThroughGirlClothSortTest"/>
             <class name="test.GoThroughHotSortTest"/>
             <class name="test.GoThroughMainPageTest"/>
+            <class name="test.GoInService"/>
+            <class name="test.EnterEndGoodPage"/>
         </classes>
     </test>
 </suite>

@@ -1,6 +1,8 @@
 <component name="libraryTable">
   <library name="Maven: appium:appium:1.0-SNAPSHOT">
-    <CLASSES />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/appium/appium/1.0-SNAPSHOT/appium-1.0-SNAPSHOT.jar!/" />
+    </CLASSES>
     <JAVADOC>
       <root url="jar://$MAVEN_REPOSITORY$/appium/appium/1.0-SNAPSHOT/appium-1.0-SNAPSHOT-javadoc.jar!/" />
     </JAVADOC>
