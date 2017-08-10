@@ -7,6 +7,7 @@ import method.LoginAndRegister;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -26,8 +27,15 @@ public class SeleniumTest {
     @BeforeMethod
     public  void setUp() throws  Exception {
 
+//        System.setProperty("webdriver.chrome.driver", "/Users/mengfeifei/Downloads/chromedriver");
+//        driver = new ChromeDriver();
         System.setProperty("webdriver.chrome.driver", "/Users/mengfeifei/Downloads/chromedriver");
-        driver = new ChromeDriver();
+        ChromeOptions chromeOptions = new ChromeOptions();
+//        设置为 headless 模式 （必须）
+        chromeOptions.addArguments("--headless");
+//        设置浏览器窗口打开大小  （非必须）
+        //chromeOptions.addArguments("--window-size=1920,1080");
+        driver = new ChromeDriver(chromeOptions);
     }
 
     @Test
