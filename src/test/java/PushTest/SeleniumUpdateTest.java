@@ -20,8 +20,9 @@ public class SeleniumUpdateTest {
         ChromeOptions chromeOptions = new ChromeOptions();
 //        设置为 headless 模式 （必须）
         chromeOptions.addArguments("--headless");
+        chromeOptions.addArguments("--disable-gpu");
 //        设置浏览器窗口打开大小  （非必须）
-        //chromeOptions.addArguments("--window-size=1920,1080");
+        chromeOptions.addArguments("window-size=1920,1080");
         driver = new ChromeDriver(chromeOptions);
     }
 
